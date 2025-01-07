@@ -1,0 +1,39 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+class Program { 
+    static void Main() { 
+        int[] array = new int[10]; Random rand = new Random(); // Присвоюємо випадкові значення від -10 до 10
+                                                    
+        for (int i = 0; i < array.Length; i++) { 
+            array[i] = rand.Next(-10, 11); 
+        } 
+        // Виводимо увесь масив
+        Console.WriteLine("Весь масив:"); 
+        for (int i = 0; i < array.Length; i++) { 
+            Console.WriteLine($"Індекс {i}: Значення {array[i]}"); 
+        } 
+        // Виводимо елементи з парним індексом
+        Console.WriteLine("\nЕлементи масиву з парним індексом:"); 
+        for (int i = 0; i < array.Length; i += 2) // Інкрементуємо на 2
+             { 
+            Console.WriteLine($"Індекс {i}: Значення {array[i]}"); 
+        } 
+        // Обчислюємо суму елементів масиву
+          int sum = 0; 
+        for (int i = 0; i < array.Length; i++) { 
+            sum += array[i]; 
+        } 
+        // Перевіряємо, чи сума невід'ємна
+        if (sum >= 0) { 
+            Console.WriteLine($"\nСума елементів масиву є невід'ємним числом: {sum}"); 
+        } 
+        else { 
+            Console.WriteLine($"\nСума елементів масиву є від'ємним числом: {sum}"); 
+        } 
+        Console.ReadLine(); 
+    } 
+}
