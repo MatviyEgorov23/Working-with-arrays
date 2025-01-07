@@ -1,0 +1,31 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp__Arr3_
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int[,] multiplicationTable = new int[9, 9]; 
+            // Заповнюємо таблицю множення
+            for (int i = 0; i < 9; i++) { 
+                for (int j = 0; j < 9; j++) { 
+                    multiplicationTable[i, j] = (i + 1) * (j + 1); 
+                } 
+            } 
+            // Виводимо таблицю множення
+            Console.WriteLine("Таблиця множення 9x9:"); 
+            for (int i = 0; i < 9; i++) { 
+                for (int j = 0; j < 9; j++) { 
+                    Console.Write(multiplicationTable[i, j] + "\t"); 
+                } 
+                Console.WriteLine(); 
+            }
+            Console.ReadLine();
+        }
+    }
+}
