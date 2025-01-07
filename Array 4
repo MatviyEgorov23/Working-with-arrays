@@ -1,0 +1,56 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp__Arr_4_
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int[,] array = new int[5, 5]; Random rand = new Random();
+            // Заповнюємо масив випадковими числами
+            for (int i = 0; i < 5; i++) { 
+                for (int j = 0; j < 5; j++) { 
+                    array[i, j] = rand.Next(-100, 101); 
+                    // Випадкові числа від -100 до 100
+                } 
+            } 
+            // Виводимо масив
+            Console.WriteLine("Двовимірний масив 5x5:"); 
+            for (int i = 0; i < 5; i++) { 
+                for (int j = 0; j < 5; j++) { 
+                    Console.Write(array[i, j] + "\t"); 
+                } 
+                Console.WriteLine(); 
+            } 
+            int maxElement = array[0, 0]; 
+            int minElement = array[0, 0]; 
+            int maxRow = 0, maxCol = 0;
+            int minRow = 0, minCol = 0; 
+            
+            // Знаходимо максимальний та мінімальний елемент і їх координати
+            
+            for (int i = 0; i < 5; i++) { 
+                for (int j = 0; j < 5; j++) { 
+                    if (array[i, j] > maxElement) { 
+                        maxElement = array[i, j]; 
+                        maxRow = i; 
+                        maxCol = j; 
+                    } 
+                    if (array[i, j] < minElement) { 
+                        minElement = array[i, j]; 
+                        minRow = i; 
+                        minCol = j; 
+                    } 
+                } 
+            } 
+            // Виводимо результати
+            Console.WriteLine($"\nМаксимальний елемент: {maxElement} (координати: [{maxRow}, {maxCol}])"); 
+            Console.WriteLine($"Мінімальний елемент: {minElement} (координати: [{minRow}, {minCol}])"); 
+            Console.ReadLine();
+        }
+    }
+}
